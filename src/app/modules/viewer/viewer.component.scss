@@ -71,6 +71,23 @@
         top: 1rem;
     }
 
+    & .selected-toolbar {
+        z-index: 2;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        background: rgba(8, 8, 8, 0.856);
+        border-radius: 0.5rem;
+        color: #fff;
+
+        & div {
+            padding: 0.5rem;
+        }
+    }
+
 }
 
 .modal-container {
@@ -78,6 +95,7 @@
     height: 100%;
     // position: relative;
 }
+
 
 .progress-overlay {
     top:0;
@@ -147,14 +165,19 @@
         background: rgb(20, 20, 33);
         color: #fff;
         border: none;
+        opacity: 0.8;
         
         &.toolbar-btn {
             width: 2.5rem;
             height: 2.5rem;
+            border-radius: 1rem;
+
+            &:hover {
+                transform: translateY(-0.5rem);
+            }
         }
 
         &.exit-btn{
-            border-radius: 50px;
             width: 3rem;
             height: 3rem;
         }

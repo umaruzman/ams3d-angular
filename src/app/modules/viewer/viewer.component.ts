@@ -27,6 +27,9 @@ export class ViewerComponent implements OnInit {
 
   viewer;
 
+  selectedDbId = 0;
+  viewAssetDetails = false;
+
   progress:any = {
     state: 1,
     progress: 0
@@ -116,6 +119,10 @@ export class ViewerComponent implements OnInit {
 
                 this.viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, ev =>{ 
                   let dbIds = ev.dbIdArray;
+                  this.selectedDbId = 0
+                  if(dbIds.length > 0) {
+                    this.selectedDbId = dbIds[0];
+                  }
                 });
 
                 this.viewer.addEventListener(Autodesk.Viewing.TEXTURES_LOADED_EVENT,ev => {
@@ -187,6 +194,14 @@ export class ViewerComponent implements OnInit {
 
   toggleFirstPerson(){
     this.firstPerson(true);
+  }
+
+  openAssetDetailDrawer() {
+    this.viewAssetDetails = true;
+  }
+
+  closeAssetDetailDrawer() {
+    this.viewAssetDetails = false;
   }
 
   public firstPerson(enabled:boolean, showMessage = true) {

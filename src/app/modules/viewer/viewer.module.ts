@@ -6,6 +6,7 @@ import { ViewerComponent } from './viewer.component';
 import { ViewerModule as VM } from 'ng2-adsk-forge-viewer';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
     ViewerRoutingModule,
     VM,
     SharedModule,
-    NzProgressModule
+    NzProgressModule,
+    NzDrawerModule
   ]
 })
 export class ViewerModule { }

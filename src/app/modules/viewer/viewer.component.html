@@ -2,11 +2,11 @@
     <div #model id="modal-container" class="modal-container"></div>
 
     <div *ngIf="progress?.state < 2" class="progress-overlay">
-        <h3 *ngIf="progress?.state == -1" class="text-danger">
+        <h3 *ngIf="progress?.state == -1" class="text-danger" [@fadeIn]>
             Error occurred while loading active model
         </h3>
 
-        <span *ngIf="progress?.state == 1">
+        <span *ngIf="progress?.state == 1" [@fadeOutOnLeave]>
             <!-- <img class="#logo" src="../../../assets/icons/icon-512x512.png"> -->
             <ng-container>
                 <nz-progress *ngIf="progress?.progress < 100" [nzPercent]="progress?.progress" nzType="circle"></nz-progress>
@@ -17,9 +17,20 @@
 
 
     <div class="top-left">
-        <button nz-button nzType="primary" class="exit-btn" (click)="exitViewer()">
+        <button nz-button nzType="primary" class="exit-btn" nzShape="circle" (click)="exitViewer()">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
         </button>
+    </div>
+
+    <div class="selected-toolbar" *ngIf="selectedDbId">
+        <div>
+            <span>Asset Name</span>
+        </div>
+        <div>
+            <button nz-button nzType="primary" nzSize="small" (click)="openAssetDetailDrawer()">
+                Details
+            </button>
+        </div>
     </div>
 
     <div class="controls" [class.invisible]="false">
@@ -45,47 +56,19 @@
                 <i class="fa fa-male" aria-hidden="true"></i>
             </button>
         </div>
-
-        <div class="group">
-            <button nz-button nzType="default" class="toolbar-btn" #mode (click)="toggleMode(0)" tag="ASSET_LABELS" nbTooltip="Show Asset Labels">
-                <!-- <nb-icon icon="bookmark-outline"></nb-icon> -->
-                <i class="fa fa-bookmark" aria-hidden="true"></i>
-            </button>
-            <button nz-button nzType="default" class="toolbar-btn" #mode (click)="toggleMode(1)" tag="LOCATION_LABELS" nbTooltip="Show Location Labels">
-                <!-- <nb-icon icon="pin-outline"></nb-icon> -->
-                <i class="fa fa-map-pin" aria-hidden="true"></i>
-            </button>
-            <!-- <button #mode nbButton (click)="toggleMode(9)" tag="CUSTOM_WIDGET_LABELS" nbTooltip="Show 3rd Party Widget Label">
-                <nb-icon icon="pin-outline"></nb-icon>
-            </button> -->
-            <!-- <button #mode *ngIf="!headless" nbButton (click)="toggleMode(2)" tag="VIEWER_SIDEBAR" nbTooltip="Open Viewer Sidebar">
-                <nb-icon icon="search-outline"></nb-icon>
-            </button>
-            <button #mode nbButton nbTooltip="Element List" tag="ELEMENT_LIST" (click)="toggleMode(3)">
-                <nb-icon icon="menu-outline" ></nb-icon>
-            </button> -->
-        </div>
-
-        <div class="group">
-            <!-- <button [status]="isolated ? 'info' : 'basic'" nbButton tag="FILTER" [nbPopover]="templateRef" 
-            (click)="toggleIsolate()">
-                <nb-icon icon="funnel-outline"></nb-icon>
-            </button>
-            <button #mode nbButton (click)="toggleMode(5)" tag="SECTIONING" nbTooltip="2D Cut">
-                <nb-icon icon="scissors-outline"></nb-icon>
-            </button> -->
-        </div>
-        
-        <div class="group">
-            <!-- <button nbButton nbTooltip="Settings" tag="SETTINGS" (click)="showSettings($event)">
-                <nb-icon icon="settings-2-outline" ></nb-icon>
-            </button>
-            <button nbButton (click)="refresh()" tag="REFRESH" nbTooltip="Reset Viewer">
-                <nb-icon icon="refresh-outline"></nb-icon>
-            </button>
-            <button #mode nbButton (click)="toggleFullscreen()" tag="FULLSCREEN" nbTooltip="Fullscreen">
-                <nb-icon [icon]="fullscreen ? 'collapse-outline' : 'expand-outline'"></nb-icon>
-            </button> -->
-        </div>
     </div>
 </div>
+
+<nz-drawer
+      [nzClosable]="false"
+      [nzVisible]="viewAssetDetails && !!selectedDbId"
+      nzPlacement="right"
+      nzTitle="Basic Drawer"
+      (nzOnClose)="closeAssetDetailDrawer()"
+    >
+      <ng-container *nzDrawerContent>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </ng-container>
+</nz-drawer>
