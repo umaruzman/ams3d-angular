@@ -1,0 +1,162 @@
+.viewer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    & .controls {
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        bottom: .5rem;
+        transform: translateX(-50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        max-width: 100vw;
+        opacity: 1;
+        transition: all 500ms;
+
+        &.invisible {
+            bottom: -5rem;
+            opacity: 0;
+        }
+
+        & .group {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+
+            max-width: 20rem;
+            opacity: 1;
+            transition: all 500ms;
+
+            &.no-margin {
+                margin: 0;
+            }
+
+            &.invisible {
+                max-width: 0;
+                opacity: 0;
+                margin: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            & button,
+            & ::ng-deep .button {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-right: 2px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &.invisible {
+            visibility: hidden;
+        }
+    }
+
+    & .top-left {
+        z-index: 4;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+    }
+
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    // position: relative;
+}
+
+.progress-overlay {
+    top:0;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #EEF9FE;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: 3;
+
+    transition: width 2s, height 2s;
+
+    & h3 {
+        position: absolute;
+    }
+
+    & span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 40%;
+        padding: 1rem;
+
+        & img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        & nb-progress-bar {
+            width: 100%;
+
+            & ::ng-deep .progress-container {
+                height: .5rem !important;
+            }
+        }
+
+        & .label {
+            text-align: center;
+            width: 100%;
+            margin-top: .5rem;
+
+            &.percentage {
+                font-size: .6rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .asset-label {
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.468);
+        color: hwb(0 100% 0%);
+    }
+}
+
+::ng-deep {
+    .ant-btn {
+        background: rgb(20, 20, 33);
+        color: #fff;
+        border: none;
+        
+        &.toolbar-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        &.exit-btn{
+            border-radius: 50px;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}

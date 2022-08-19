@@ -1,0 +1,208 @@
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { bounceOutRightOnLeaveAnimation, fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
+import { AssetLabelMarkerExtension } from 'src/app/extensions/AssetLabelMarkerExtension';
+import { ViewerNavigationMode } from 'src/app/models/modes/ViewerNavigationMode';
+import { ViewerService } from './viewer.service';
+
+declare const Autodesk: any;
+
+
+@Component({
+  selector: 'app-viewer',
+  templateUrl: './viewer.component.html',
+  styleUrls: ['./viewer.component.scss'],
+  animations: [
+    bounceOutRightOnLeaveAnimation({anchor: 'modalOut', delay: 400}),
+    fadeOutOnLeaveAnimation(),
+    fadeInOnEnterAnimation({anchor: 'fadeIn', delay: 1000})
+  ]
+})
+export class ViewerComponent implements OnInit {
+
+  @ViewChild('viewerContainer') viewerContainer: any;
+  @ViewChild('model') modelContainer: any;
+
+  DOCUMENT_URL = 'http://localhost:4200/assets/model/5033/Resource/3D View/{3D} 805045/{3D}.svf'
+
+  viewer;
+
+  progress:any = {
+    state: 1,
+    progress: 0
+  };
+
+  constructor(
+    private router: Router,
+    private cd: ChangeDetectorRef,
+    private service: ViewerService
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    this.registerExtensions();
+    this.launchViewer();
+  }
+
+  private launchViewer() {
+    if (this.viewer) {
+      // Viewer has already been initialised
+      return;
+    }
+   
+    const options = {
+      env: 'Local',
+      document: this.DOCUMENT_URL,
+      api: 'derivativeV2',
+    };
+   
+    // For a headless viewer
+    this.viewer = new Autodesk.Viewing.Viewer3D(this.modelContainer.nativeElement, {
+      memory: { limit: 5 * 1024  },
+      extensions: [
+        'Autodesk.ViewCubeUi',
+        'Autodesk.AEC.Minimap3DExtension', 
+        'Autodesk.AEC.LevelsExtension'
+      ],
+      loaderExtensions: { svf: "Autodesk.MemoryLimited" }
+    });
+   
+    this.loadDocument(options)
+  }
+   
+  private loadDocument(options) {
+    Autodesk.Viewing.endpoint.getItemApi = (endpoint, derivativeUrn, api) => {
+      const derivative = derivativeUrn.split('Resource')[1];
+      
+      if (derivativeUrn.indexOf('.svf') > -1)
+        return options.document;
+
+      let pathToModel:String = options.document.split('Resource')[0] + 'Resource';
+      return pathToModel + decodeURIComponent(derivativeUrn.split('Resource')[1])
+    }
+
+    Autodesk.Viewing.Initializer(options, 
+      () => {
+        this.service.getManifest(options.document).subscribe(
+              manifest => {
+                const doc = new Autodesk.Viewing.Document(manifest);
+                doc.downloadAecModelData();
+                
+                this.viewer.start();
+                this.viewer.loadDocumentNode(doc, doc.getRoot().getDefaultGeometry(), options);
+
+                this.init();
+
+                this.viewer.addEventListener(Autodesk.Viewing.OBJECT_TREE_CREATED_EVENT, (ev) =>{
+                  this.viewer.getExtension('AssetLabelMarkerExtension', ext => ext.showIcons(true));
+                  this.viewer.getExtension('AssetLabelMarkerExtension', ext => ext.updateIcons());
+                });
+
+                this.viewer.addEventListener(Autodesk.Viewing.PROGRESS_UPDATE_EVENT,ev => {
+                  if (ev.state > 0) {
+                    this.progress = {
+                      state: ev.state,
+                      progress: Math.floor(ev.percent)
+                    };
+    
+                    if (this.progress?.state == 2) {
+                      if (this.progress.progress == 100)
+                        this.cd.detectChanges();
+                    }
+                  }
+                });
+
+                this.viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, ev =>{ 
+                  let dbIds = ev.dbIdArray;
+                });
+
+                this.viewer.addEventListener(Autodesk.Viewing.TEXTURES_LOADED_EVENT,ev => {
+                  this.viewer.loadExtension('Autodesk.BimWalk');
+                });
+
+              },
+              err => {
+                console.log("Viewer failed to initialize", err)
+              }
+            );
+          }, err => {
+            console.log("Viewer failed to initialize", err)
+          })
+  }
+   
+  private registerExtensions():void {
+    Autodesk.Viewing.theExtensionManager.registerExtension('AssetLabelMarkerExtension', AssetLabelMarkerExtension);
+  }
+
+  private init() {
+    this.viewer.loadExtension('AssetLabelMarkerExtension',{
+      assets: [
+        { dbId: 7094, label: '300&#176;C', css: 'fas fa-thermometer-full' },
+        { dbId: 4724, label: '356&#176;C', css: 'fas fa-thermometer-full' },
+        { dbId: 6553, label: '356&#176;C', css: 'fas fa-thermometer-full' },
+      ],
+      onClick: (id) => {
+        this.viewer.select(id);
+        this.viewer.utilities.fitToView();
+      }
+    });
+  }
+   
+  ngOnDestroy() {
+    // Clean up the viewer when the component is destroyed
+    if (this.viewer && this.viewer.running) {
+      this.viewer.tearDown();
+      this.viewer.finish();
+      this.viewer = null;
+    }
+  }
+
+  navMode = ViewerNavigationMode.ORBIT;
+
+  setNavButtons(navMode) {
+    this.navMode = navMode;
+  }
+  
+  exitViewer() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  pan() {
+
+  }
+
+  zoom() {
+
+  }
+
+  orbit() {
+
+  }
+
+  toggleMode(mode){
+
+  }
+
+  toggleFirstPerson(){
+    this.firstPerson(true);
+  }
+
+  public firstPerson(enabled:boolean, showMessage = true) {
+    this.viewer.setBimWalkToolPopup(showMessage);
+
+    this.viewer.getExtension('Autodesk.BimWalk', bimWalk=>{
+      console.log('BimWalk', bimWalk);
+      
+      if (enabled && !bimWalk['isActive']('')) {
+        bimWalk['activate']('');
+        this.setNavButtons(ViewerNavigationMode.FIRST_PERSON);
+      } else if (!enabled && bimWalk['isActive']('')) {
+        bimWalk['deactivate']();
+        this.setNavButtons(ViewerNavigationMode.ORBIT);
+      }
+    });
+  }
+
+}

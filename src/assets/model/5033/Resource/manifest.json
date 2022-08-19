@@ -1,0 +1,759 @@
+{
+    "urn": "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA",
+    "derivatives": [
+        {
+            "hasThumbnail": "true",
+            "children": [
+                {
+                    "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/model.sdb",
+                    "role": "Autodesk.CloudPlatform.PropertyDatabase",
+                    "mime": "application/autodesk-db",
+                    "guid": "6fac95cb-af5d-3e4f-b943-8a7f55847ff1",
+                    "type": "resource",
+                    "status": "success"
+                },
+                {
+                    "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/AECModelData.json",
+                    "role": "Autodesk.AEC.ModelData",
+                    "mime": "application/json",
+                    "guid": "a4aac952-a3f4-031c-4113-b2d9ac2d0de6",
+                    "type": "resource",
+                    "status": "success"
+                },
+                {
+                    "guid": "8276b1d9-72e0-4421-f056-5dd2f25a0f23",
+                    "type": "geometry",
+                    "role": "3d",
+                    "name": "{3D}",
+                    "viewableID": "7355f61c-f615-4d2a-9c1f-0803955b9669-000c48b5",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "hasThumbnail": "true",
+                    "progress": "complete",
+                    "children": [
+                        {
+                            "guid": "7355f61c-f615-4d2a-9c1f-0803955b9669-000c48b5",
+                            "type": "view",
+                            "role": "3d",
+                            "name": "{3D}",
+                            "status": "success",
+                            "progress": "complete",
+                            "camera": [
+                                -150.587158203125,
+                                252.19168090820312,
+                                228.48350524902344,
+                                55.39960479736328,
+                                46.20491027832031,
+                                22.496734619140625,
+                                0.40824830532073975,
+                                -0.40824830532073975,
+                                0.8164966106414795,
+                                1.3768740892410278,
+                                0,
+                                1,
+                                1
+                            ]
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/{3D} 805045/{3D}.svf",
+                            "role": "graphics",
+                            "mime": "application/autodesk-svf",
+                            "guid": "c94cec21-a581-d9f8-3789-a9ef9b67d6b4",
+                            "type": "resource"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/{3D} 805045/{3D}1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "98a94f3c-7143-4504-ab1f-36b16f5bfa34",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/{3D} 805045/{3D}2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "bd0ad7f5-531d-5137-056b-b275af5c9669",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/{3D} 805045/{3D}4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "501b6b9c-1d2f-1561-ed3f-c8d992e3480a",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "guid": "336c1e01-0a2b-36b2-607a-00a9a566a8e0",
+                    "type": "geometry",
+                    "role": "3d",
+                    "name": "New Construction",
+                    "viewableID": "c884ae1b-61e7-4f9d-0001-719e20b22d0b-000f79a5",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "hasThumbnail": "true",
+                    "progress": "complete",
+                    "children": [
+                        {
+                            "guid": "c884ae1b-61e7-4f9d-0001-719e20b22d0b-000f79a5",
+                            "type": "view",
+                            "role": "3d",
+                            "name": "New Construction",
+                            "status": "success",
+                            "progress": "complete",
+                            "camera": [
+                                261.3863830566406,
+                                -159.7818603515625,
+                                223.129150390625,
+                                55.39960479736328,
+                                46.20491027832031,
+                                17.14238739013672,
+                                -0.40824830532073975,
+                                0.40824830532073975,
+                                0.8164966106414795,
+                                1.3234660625457764,
+                                0,
+                                1,
+                                1
+                            ]
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/08f99ae5-b8be-4f8d-881b-128675723c10/New Construction/New Construction.svf",
+                            "role": "graphics",
+                            "mime": "application/autodesk-svf",
+                            "guid": "cd5c94d0-d36b-24cb-3a04-db56c4b1a3d7",
+                            "type": "resource"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/08f99ae5-b8be-4f8d-881b-128675723c10/New Construction/New Construction1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "a3c19573-8948-7ae0-fb5c-75cab1d0e87a",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/08f99ae5-b8be-4f8d-881b-128675723c10/New Construction/New Construction2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "86d53dd2-82c8-1948-5997-00ebf6078ed7",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/3D View/08f99ae5-b8be-4f8d-881b-128675723c10/New Construction/New Construction4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "7e36c074-8997-d941-4dc3-6a72fcdf3b9b",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        }
+                    ]
+                },
+                {
+                    "guid": "f2e74d59-4f85-42bf-a9d8-0f0d6bbc4271-000842af",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "E601 - Panel Schedules",
+                    "viewableID": "f2e74d59-4f85-42bf-a9d8-0f0d6bbc4271-000842af",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E601 - Panel Schedules 541359/dwfx/E601 - Panel Schedules1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "2b80b173-5aeb-4443-7f95-8b67188ea9eb",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E601 - Panel Schedules 541359/dwfx/E601 - Panel Schedules2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "9b744c77-f34c-53ab-1e67-09ed095c75fd",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E601 - Panel Schedules 541359/dwfx/E601 - Panel Schedules4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "76c92dac-074f-1a78-2992-391ce317b1f2",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/9b3f7fe4-85f6-a312-33d5-c6e63450ffb1_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "eab02849-b3cf-456d-5964-6b20198d2c59",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "3bd29ae3-f02b-4e90-883f-8fb15387aea6",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: E601 - Panel Schedules",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000842cd",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "E301 - North Level 1 - Lighting Plan",
+                    "viewableID": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000842cd",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E301 - North Level 1 - Lighting Plan 541389/dwfx/E301 - North Level 1 - Lighting Plan1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "985caf33-b88e-cf8a-e86e-dcfe4906c665",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E301 - North Level 1 - Lighting Plan 541389/dwfx/E301 - North Level 1 - Lighting Plan2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "a665b085-7eec-f9e5-75f8-02280cb43377",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E301 - North Level 1 - Lighting Plan 541389/dwfx/E301 - North Level 1 - Lighting Plan4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "cf168620-3a4b-96f8-7423-e9c6479ad21b",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/22ef3544-0341-35d5-964d-64a070e30a88_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "2c7bf6f6-e220-b96f-4f8f-1341104e901e",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "9f2db58d-fe9f-469b-b33a-0a3eeecd16c9",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: E301 - North Level 1 - Lighting Plan",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000854ac",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "M601 - Duct Sections",
+                    "viewableID": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000854ac",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M601 - Duct Sections 545964/dwfx/M601 - Duct Sections1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "03ac6cf4-15df-1c94-78f4-dca7bf7f9738",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M601 - Duct Sections 545964/dwfx/M601 - Duct Sections2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "93c4c6e1-dff6-2169-6e2e-a5f767f33d12",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M601 - Duct Sections 545964/dwfx/M601 - Duct Sections4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "64860052-be20-b162-8852-7438c02114e2",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/7e6b1eeb-bb40-6788-10ee-a8cf54db2d25_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "c51a5b2d-59c3-7c49-6b92-44b96ed06336",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "cecc583d-7844-4411-96fb-8e9814e9cd89",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: M601 - Duct Sections",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000854c7",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "M701 - Mechanical Schedules",
+                    "viewableID": "7a2419bd-e042-4b38-8b95-781bc33e7dd8-000854c7",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M701 - Mechanical Schedules 545991/dwfx/M701 - Mechanical Schedules1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "1396ebd3-be1c-6ada-d233-794ddc71a3d0",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M701 - Mechanical Schedules 545991/dwfx/M701 - Mechanical Schedules2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "dbfce7ce-800a-1ee1-f18b-f04b020fb887",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M701 - Mechanical Schedules 545991/dwfx/M701 - Mechanical Schedules4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "70d954bd-dd19-5153-d7eb-cbb56154e855",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/69ed82a6-5741-c75e-f90d-b287e19290ef_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "8d2fbd31-d9f0-9de3-3c26-114e906d066e",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "09a2c69e-7d5e-41e6-8c6f-4d0c9f61715c",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: M701 - Mechanical Schedules",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "1513bf56-b281-46fc-917c-711a0e9748e6-0008e95a",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "E201 - Unnamed",
+                    "viewableID": "1513bf56-b281-46fc-917c-711a0e9748e6-0008e95a",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E201 - Unnamed 584026/dwfx/E201 - Unnamed1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "70f36c34-69d3-6e3b-5e5d-ff68a73b1bca",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E201 - Unnamed 584026/dwfx/E201 - Unnamed2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "2b4c066e-358c-c01e-3fd9-74027d2d505e",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E201 - Unnamed 584026/dwfx/E201 - Unnamed4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "12ad23e0-527e-0edf-f8a0-f76262e9f987",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/aff8a743-7093-422b-b074-a15b4d6c54cd_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "ec1cbd2e-7281-5622-79b8-af582bffb8a3",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "a5c10e7f-87ad-4eb7-9dbf-b54610d8d003",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: E201 - Unnamed",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "30a3bbb8-9fd7-4526-8fb5-b921e7dd1c83-00096d16",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "M100 - MECHANICAL LEGEND",
+                    "viewableID": "30a3bbb8-9fd7-4526-8fb5-b921e7dd1c83-00096d16",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M100 - MECHANICAL LEGEND 617750/dwfx/M100 - MECHANICAL LEGEND1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "1ef58164-e462-12d3-76b7-0b0550b04685",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M100 - MECHANICAL LEGEND 617750/dwfx/M100 - MECHANICAL LEGEND2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "0d01338b-3ab5-aaf2-4164-ba88a8529342",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/M100 - MECHANICAL LEGEND 617750/dwfx/M100 - MECHANICAL LEGEND4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "eeea1f63-1129-3ccf-1845-174a089a333b",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/ca4a574e-a181-006d-7160-0e066a4ce537_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "81211152-eebf-e5b6-25f8-db473d70d57e",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "ef38828e-436b-482f-8755-bf15492ea3ec",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: M100 - MECHANICAL LEGEND",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "guid": "4aded12f-bb3e-43d3-a764-654a0a8454e4-000987a6",
+                    "type": "geometry",
+                    "role": "2d",
+                    "name": "E101 - Electrical Power Riser Diagram",
+                    "viewableID": "4aded12f-bb3e-43d3-a764-654a0a8454e4-000987a6",
+                    "phaseNames": "New Construction",
+                    "status": "success",
+                    "progress": "complete",
+                    "properties": {
+                        "Print Setting": {
+                            "Layout": "Landscape",
+                            "Paper size": "ISO A4, 210 x 297 mm"
+                        }
+                    },
+                    "hasThumbnail": "true",
+                    "children": [
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E101 - Electrical Power Riser Diagram 624550/dwfx/E101 - Electrical Power Riser Diagram1.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "507d195d-e256-8de0-3e83-f5be5243f559",
+                            "type": "resource",
+                            "resolution": [
+                                100,
+                                100
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E101 - Electrical Power Riser Diagram 624550/dwfx/E101 - Electrical Power Riser Diagram2.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "e88c283b-556c-aa1a-d7b1-319e4e9b56ab",
+                            "type": "resource",
+                            "resolution": [
+                                200,
+                                200
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/Resource/Sheet/E101 - Electrical Power Riser Diagram 624550/dwfx/E101 - Electrical Power Riser Diagram4.png",
+                            "role": "thumbnail",
+                            "mime": "image/png",
+                            "guid": "b0de6dfe-96cb-83ea-66f6-3826f6f690fa",
+                            "type": "resource",
+                            "resolution": [
+                                400,
+                                400
+                            ],
+                            "status": "success"
+                        },
+                        {
+                            "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/2ff7ea40-f753-c989-64fb-de7788fbfa43_f2d/primaryGraphics.f2d",
+                            "role": "graphics",
+                            "mime": "application/autodesk-f2d",
+                            "guid": "16553508-76ce-ce3d-fc20-db62a6415c27",
+                            "type": "resource",
+                            "status": "success"
+                        },
+                        {
+                            "guid": "09c5e53c-5676-4470-94c5-d2de62b7b6b6",
+                            "type": "view",
+                            "role": "2d",
+                            "name": "Sheet: E101 - Electrical Power Riser Diagram",
+                            "viewbox": [
+                                0,
+                                -0.003848,
+                                1187.999999,
+                                840.003849
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "name": "rme_advanced_sample_project.rvt",
+            "progress": "complete",
+            "outputType": "svf",
+            "status": "success"
+        },
+        {
+            "children": [
+                {
+                    "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/preview1.png",
+                    "role": "thumbnail",
+                    "mime": "image/png",
+                    "guid": "db899ab5-939f-e250-d79d-2d1637ce4565",
+                    "type": "resource",
+                    "resolution": [
+                        100,
+                        100
+                    ],
+                    "status": "success"
+                },
+                {
+                    "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/preview2.png",
+                    "role": "thumbnail",
+                    "mime": "image/png",
+                    "guid": "3f6c118d-f551-7bf0-03c9-8548d26c9772",
+                    "type": "resource",
+                    "resolution": [
+                        200,
+                        200
+                    ],
+                    "status": "success"
+                },
+                {
+                    "urn": "urn:adsk.viewing:fs.file:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZHNwLW1vZGVscy81MDMzLnppcA/output/preview4.png",
+                    "role": "thumbnail",
+                    "mime": "image/png",
+                    "guid": "4e751806-0920-ce32-e9fd-47c3cec21536",
+                    "type": "resource",
+                    "resolution": [
+                        400,
+                        400
+                    ],
+                    "status": "success"
+                }
+            ],
+            "progress": "complete",
+            "outputType": "thumbnail",
+            "status": "success"
+        }
+    ],
+    "hasThumbnail": "true",
+    "progress": "complete",
+    "type": "manifest",
+    "region": "US",
+    "version": "1.0",
+    "status": "success"
+}
