@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-between">
+    <h3>Assets</h3>
+    <button nz-button nzType="primary" (click)="newAsset()">Add Asset</button>
+</div>
+
+<nz-table #basicTable [nzData]="data">
+  <thead>
+    <tr>
+      <th>Asset Name</th>
+      <th>Asset Type</th>
+      <th>Model</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data?.name}}</td>
+      <td>{{data?.assetType?.type}}</td>
+      <td>{{data?.model?.modelName}}</td>
+      <td>
+        <a (click)="viewProperties(data?.properties)">View Properties</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Edit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

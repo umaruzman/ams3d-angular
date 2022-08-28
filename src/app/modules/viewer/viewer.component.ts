@@ -73,7 +73,7 @@ export class ViewerComponent extends BasicComponent implements OnInit {
       memory: { limit: 5 * 1024  },
       extensions: [
         'Autodesk.ViewCubeUi',
-        'Autodesk.AEC.Minimap3DExtension', 
+        // 'Autodesk.AEC.Minimap3DExtension', 
         'Autodesk.AEC.LevelsExtension'
       ],
       loaderExtensions: { svf: "Autodesk.MemoryLimited" }
@@ -211,6 +211,11 @@ export class ViewerComponent extends BasicComponent implements OnInit {
 
   toggleMode(mode){
 
+  }
+
+
+  clearSelection(){
+    this.viewer.select();
   }
 
   toggleFirstPerson(){

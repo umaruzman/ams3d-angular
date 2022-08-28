@@ -28,13 +28,14 @@
     </div>
 
     <div class="selected-toolbar" *ngIf="selectedDbId">
-        <div>
+        <div class="d-flex justify-content-center align-items-center">
             <span>Asset Name</span>
         </div>
-        <div>
+        <div  class="d-flex justify-content-center align-items-center">
             <button nz-button nzType="primary" nzSize="small" (click)="openAssetDetailDrawer()">
                 Details
             </button>
+            <a class="btn text-white" (click)="clearSelection()"><i class="fa fa-times" aria-hidden="true"></i></a>
         </div>
     </div>
 

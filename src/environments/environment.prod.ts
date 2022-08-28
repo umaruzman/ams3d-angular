@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   testMode: false,
+  apiBase:"",
   toastDuration: {
     success: 1000,
     error: 1000,

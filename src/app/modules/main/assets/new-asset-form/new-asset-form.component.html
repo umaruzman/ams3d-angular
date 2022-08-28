@@ -1,0 +1,45 @@
+<form
+    nz-form
+    nzLayout="horizontal"
+    [formGroup]="form"
+    (ngSubmit)="submitFormData()"
+>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="4">Asset Name</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzErrorTip="Please input Asset Name">
+            <input nz-input formControlName="name" placeholder="Asset Name" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="4">Asset Type</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <nz-select
+                id="assetTypeId"
+                formControlName="assetTypeId"
+                nzPlaceHolder="Select Asset Type"
+            >
+                <nz-option nzValue="1" nzLabel="Type"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control [nzSpan]="14" [nzOffset]="4">
+            <button nz-button nzType="primary">Submit</button>
+        </nz-form-control>
+    </nz-form-item>
+    <!-- <table>
+        <ng-container *ngIf="assetProps" formArrayName="properties">
+            <tr *ngFor="let propForm of assetProps.controls; let i = index">
+                <ng-container [formGroup]="propForm">
+                    <td>
+                        <input nz-input formControlName="key" placeholder="Property" />
+                    </td>
+                    <td>
+                        <input nz-input formControlName="value" placeholder="Value" />
+                    </td>
+                </ng-container>
+            </tr>
+        </ng-container>
+    </table> -->
+    
+</form>

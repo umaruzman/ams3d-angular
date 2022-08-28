@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ViewerModule } from 'ng2-adsk-forge-viewer';
+import { AppService } from './app.service';
 
 
 registerLocaleData(en);
@@ -40,7 +41,19 @@ registerLocaleData(en);
     LayoutsModule,
     ViewerModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    [{
+      provide: APP_INITIALIZER,
+      multi: true,
+      deps: [AppService],
+      useFactory: (service: AppService) => {
+        return () => {
+          return service.init()
+        }
+      }
+    }],
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

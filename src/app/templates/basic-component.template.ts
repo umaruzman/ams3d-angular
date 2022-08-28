@@ -28,6 +28,8 @@ export abstract class BasicComponent implements OnInit, AfterViewInit, OnDestroy
 
     public title;
 
+    public data;
+
     constructor(
         public toast: NzMessageService,
         public modal: NzModalService,
