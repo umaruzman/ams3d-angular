@@ -6,9 +6,9 @@
     & .controls {
         z-index: 2;
         position: absolute;
-        left: 50%;
+        left: 0.5rem;
         bottom: .5rem;
-        transform: translateX(-50%);
+        // transform: translateX(-50%);
 
         display: flex;
         align-items: center;
@@ -152,6 +152,21 @@
     }
 }
 
+.logo-overlay {
+    position: absolute;
+    background-color: transparent;
+    height: auto;
+    width: 10%;
+    max-width: 75px;
+    z-index: 1;
+
+    top: unset;
+    left: unset;
+    right: .5rem;
+    bottom: .5rem;
+    transform: translate(0, 0);
+}
+
 ::ng-deep {
     .asset-label {
         padding: 5px;
@@ -162,24 +177,34 @@
 
 ::ng-deep {
     .ant-btn {
-        background: rgb(20, 20, 33);
         color: #fff;
         border: none;
         opacity: 0.8;
         
         &.toolbar-btn {
+            background: rgb(20, 20, 33);
             width: 2.5rem;
             height: 2.5rem;
             border-radius: 1rem;
 
             &:hover {
-                transform: translateY(-0.5rem);
+                transform: translateY(-0.2rem);
             }
         }
 
         &.exit-btn{
+            background: rgb(20, 20, 33);
             width: 3rem;
             height: 3rem;
+            &:hover {
+                transform: scale(1.2);
+            }
         }
+    }
+
+    .ant-message-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

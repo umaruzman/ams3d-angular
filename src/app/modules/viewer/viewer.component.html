@@ -15,6 +15,11 @@
         </span>
     </div>
 
+    <div class="logo-overlay">
+        <span>
+            <nz-progress *ngIf="progress?.progress < 100" [nzPercent]="progress?.progress" [nzShowInfo]="false"></nz-progress>
+        </span>
+    </div>
 
     <div class="top-left">
         <button nz-button nzType="primary" class="exit-btn" nzShape="circle" (click)="exitViewer()">
@@ -38,19 +43,19 @@
         </div>
         
         <div class="group">
-            <button nz-button nzType="default" class="toolbar-btn" #nav (click)="orbit()" tag="ORBIT" nbTooltip="Orbit" status="info">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Orbit" class="toolbar-btn" #nav (click)="orbit()" tag="ORBIT" nbTooltip="Orbit" status="info">
                 <!-- <nb-icon icon="compass" class="far" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-compass" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" class="toolbar-btn" #nav (click)="pan()" tag="PAN" nbTooltip="Pan">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Pan" class="toolbar-btn" #nav (click)="pan()" tag="PAN" nbTooltip="Pan">
                 <!-- <nb-icon icon="hand-paper" class="far" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-hand-paper" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" class="toolbar-btn" #nav (click)="zoom()" tag="ZOOM" nbTooltip="Zoom">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Zoom" class="toolbar-btn" #nav (click)="zoom()" tag="ZOOM" nbTooltip="Zoom">
                 <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-search-plus" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" class="toolbar-btn" #nav tag="FIRST_PERSON" 
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="First Person" class="toolbar-btn" #nav tag="FIRST_PERSON" 
             (click)="toggleFirstPerson()" nbTooltip="First Person View">
                 <!-- <nb-icon icon="person-outline"></nb-icon> -->
                 <i class="fa fa-male" aria-hidden="true"></i>
@@ -63,12 +68,15 @@
       [nzClosable]="false"
       [nzVisible]="viewAssetDetails && !!selectedDbId"
       nzPlacement="right"
-      nzTitle="Basic Drawer"
+      [nzWidth]="500"
       (nzOnClose)="closeAssetDetailDrawer()"
     >
       <ng-container *nzDrawerContent>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div class="asset-details-panel">
+            <h1>
+                Chiller 124
+            </h1>
+        </div>
+        
       </ng-container>
 </nz-drawer>

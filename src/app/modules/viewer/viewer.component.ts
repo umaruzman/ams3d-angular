@@ -1,8 +1,11 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { bounceOutRightOnLeaveAnimation, fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { AssetLabelMarkerExtension } from 'src/app/extensions/AssetLabelMarkerExtension';
 import { ViewerNavigationMode } from 'src/app/models/modes/ViewerNavigationMode';
+import { BasicComponent } from 'src/app/templates/basic-component.template';
 import { ViewerService } from './viewer.service';
 
 declare const Autodesk: any;
@@ -18,7 +21,7 @@ declare const Autodesk: any;
     fadeInOnEnterAnimation({anchor: 'fadeIn', delay: 1000})
   ]
 })
-export class ViewerComponent implements OnInit {
+export class ViewerComponent extends BasicComponent implements OnInit {
 
   @ViewChild('viewerContainer') viewerContainer: any;
   @ViewChild('model') modelContainer: any;
@@ -36,10 +39,14 @@ export class ViewerComponent implements OnInit {
   };
 
   constructor(
+    toast: NzMessageService,
+    modal: NzModalService,
     private router: Router,
     private cd: ChangeDetectorRef,
     private service: ViewerService
-  ) { }
+  ) { 
+    super(toast, modal)
+  }
 
   ngOnInit(): void {
   }
@@ -177,15 +184,29 @@ export class ViewerComponent implements OnInit {
   }
 
   pan() {
+    this.setNavButtons(ViewerNavigationMode.PAN);
 
+    if (this.viewer.getActiveNavigationTool() != 'pan') 
+      this.viewer.setActiveNavigationTool('pan');
+
+    this.showInfo(`Viewer Changed to ${ViewerNavigationMode[this.navMode]} Mode`);
+    
   }
 
   zoom() {
+    this.setNavButtons(ViewerNavigationMode.ZOOM);
 
+    if (this.viewer.getActiveNavigationTool() != 'dolly') 
+      this.viewer.setActiveNavigationTool('dolly');
+
+    this.showInfo(`Viewer Changed to ${ViewerNavigationMode[this.navMode]} Mode`);
   }
 
   orbit() {
-
+    this.setNavButtons(ViewerNavigationMode.ORBIT);
+    if (this.viewer.getActiveNavigationTool() != 'orbit') 
+      this.viewer.setActiveNavigationTool('orbit');
+    this.showInfo(`Viewer Changed to ${ViewerNavigationMode[this.navMode]} Mode`);
   }
 
   toggleMode(mode){
@@ -193,7 +214,13 @@ export class ViewerComponent implements OnInit {
   }
 
   toggleFirstPerson(){
-    this.firstPerson(true);
+    if(this.navMode == ViewerNavigationMode.FIRST_PERSON) {
+      this.firstPerson(false, false);
+    } else  {
+     this.firstPerson(true, false);
+    }
+
+    this.showInfo(`Viewer Changed to ${ViewerNavigationMode[this.navMode]} Mode`);
   }
 
   openAssetDetailDrawer() {

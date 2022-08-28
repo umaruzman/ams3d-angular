@@ -7,6 +7,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 const nzModules = [
   NzButtonModule,
@@ -15,7 +16,8 @@ const nzModules = [
   NzInputModule,
   NzSelectModule,
   NzFormModule,
-  NzCheckboxModule
+  NzCheckboxModule,
+  NzToolTipModule
 ]
 
 @NgModule({
