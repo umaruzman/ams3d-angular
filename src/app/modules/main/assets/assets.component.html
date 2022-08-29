@@ -18,11 +18,11 @@
       <td>{{data?.assetType?.type}}</td>
       <td>{{data?.model?.modelName}}</td>
       <td>
-        <a class="btn btn-primary" (click)="viewProperties(data?.properties)">View Properties</a>
+        <a class="btn btn-primary btn-sm" (click)="viewProperties(data?.properties)">View Properties</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a class="btn btn-primary" (click)="editAssetForm(data)">Edit</a>
+        <a class="btn btn-primary btn-sm" (click)="editAssetForm(data)">Edit</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a class="btn btn-primary" (click)="deleteAsset(data?.id)">Delete</a>
+        <a class="btn btn-primary btn-sm" (click)="deleteAsset(data?.id)">Delete</a>
       </td>
     </tr>
   </tbody>
