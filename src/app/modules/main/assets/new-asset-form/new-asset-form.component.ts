@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { FormTemplate } from 'src/app/templates/form.template';
 import { ModalFormTemplate } from 'src/app/templates/modal-form.template';
+import { AssetTypesService } from '../../assets-types/asset-types.service';
 
 @Component({
   selector: 'app-new-asset-form',
@@ -15,21 +16,33 @@ export class NewAssetFormComponent extends ModalFormTemplate implements OnInit {
 
   formTitle = "Add Asset";
 
+  assetTypes = [];
+
   constructor(
     fb: FormBuilder,
     cd: ChangeDetectorRef,
-    modalRef: NzModalRef
+    modalRef: NzModalRef,
+    private assetTypeService: AssetTypesService
   ) { 
     super(fb, cd, modalRef);
   }
 
   ngOnInit(): void {
-
+    this.loadAssetTypes();
     this.initForm();
 
     if(!this.editData) {
       this.addProp();
     }
+  }
+
+  loadAssetTypes(){
+    this.assetTypeService.getAll().subscribe((data)=>{
+      this.assetTypes = data;
+    },
+    ()=>{
+      this.closeModal();
+    })
   }
 
   initForm() {

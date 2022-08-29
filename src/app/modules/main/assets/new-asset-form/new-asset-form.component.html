@@ -24,7 +24,7 @@
                 formControlName="assetTypeId"
                 nzPlaceHolder="Select Asset Type"
             >
-                <nz-option nzValue="1" nzLabel="Type"></nz-option>
+                <nz-option *ngFor="let type of assetTypes" [nzValue]="type.id" [nzLabel]="type.type"></nz-option>
             </nz-select>
         </nz-form-control>
     </nz-form-item>
