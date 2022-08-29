@@ -8,27 +8,27 @@ const BASE_URL = environment.apiBase;
 @Injectable({
   providedIn: 'root'
 })
-export class AssetsService {
+export class AssetTypesService {
 
   constructor(
     private http:HttpClient
   ) { }
 
   getAll(): Observable<any> {
-    return this.http.get(`${BASE_URL}/Assets`)
+    return this.http.get(`${BASE_URL}/AssetTypes`)
   }
 
   add(data): Observable<any> {
-    return this.http.post(`${BASE_URL}/Assets`, data);
+    return this.http.post(`${BASE_URL}/AssetTypes`, data);
   }
 
 
   delete(id): Observable<any> {
-    return this.http.delete(`${BASE_URL}/Assets/${id}`,);
+    return this.http.delete(`${BASE_URL}/AssetTypes/${id}`,);
   }
 
   update(id, data): Observable<any> {
-    return this.http.put(`${BASE_URL}/Assets/${id}`, data);
+    return this.http.put(`${BASE_URL}/AssetTypes/${id}`, data);
   }
 
 }

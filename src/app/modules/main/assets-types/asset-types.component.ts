@@ -2,22 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
-import { AssetPropertiesComponent } from './asset-properties/asset-properties.component';
-import { AssetsService } from './assets.service';
-import { map } from 'rxjs/operators';
-import { NewAssetFormComponent } from './new-asset-form/new-asset-form.component';
+import { AssetTypesService } from './asset-types.service';
+import { NewAssetTypeFormComponent } from './new-asset-type-form/new-asset-type-form.component';
 
 @Component({
-  selector: 'app-assets',
-  templateUrl: './assets.component.html',
-  styleUrls: ['./assets.component.scss']
+  selector: 'app-asset-types',
+  templateUrl: './asset-types.component.html',
+  styleUrls: ['./asset-types.component.scss']
 })
-export class AssetsComponent extends BasicComponent implements OnInit {
+export class AssetTypesComponent extends BasicComponent implements OnInit {
 
   constructor(
     toast: NzMessageService,
     modal: NzModalService,
-    private service: AssetsService
+    private service: AssetTypesService
   ) {
     super(toast,modal);
   }
@@ -29,7 +27,6 @@ export class AssetsComponent extends BasicComponent implements OnInit {
   getAllAssets(){
     this.service.getAll()
       .subscribe(data=>{
-        data.map(a=> a.properties = JSON.parse(a.properties));
         this.data = data;
         console.log('Init Data', data);
       },
@@ -38,12 +35,9 @@ export class AssetsComponent extends BasicComponent implements OnInit {
       })
   }
 
-  viewProperties(props){
-    this.showDialog(AssetPropertiesComponent, {data: props});
-  }
 
   newAssetForm(){
-    const ref = this.showDialog(NewAssetFormComponent);
+    const ref = this.showDialog(NewAssetTypeFormComponent);
     ref.afterClose.subscribe(data=>{
       if(data?.data){
         this.saveAsset(data.data);
@@ -52,7 +46,7 @@ export class AssetsComponent extends BasicComponent implements OnInit {
   }
 
   editAssetForm(asset){
-    const ref = this.showDialog(NewAssetFormComponent, {editData: asset});
+    const ref = this.showDialog(NewAssetTypeFormComponent, {editData: asset});
     ref.afterClose.subscribe(data=>{
       if(data?.data){
         this.updateAsset(data.data);

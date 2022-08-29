@@ -9,6 +9,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
       { path: 'assets', loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule) },
+      { path: 'asset-types', loadChildren: () => import('./assets-types/asset-types.module').then(m => m.AssetTypesModule) },
     ]
   },
 ];

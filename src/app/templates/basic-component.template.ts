@@ -120,7 +120,7 @@ export abstract class BasicComponent implements OnInit, AfterViewInit, OnDestroy
             nzContent: component,
             nzFooter: null,
             nzComponentParams: data,
-            // nzClosable:false, // False to remove X icon
+            nzClosable:false, // False to remove X icon
             nzMaskClosable: false
         })
     }

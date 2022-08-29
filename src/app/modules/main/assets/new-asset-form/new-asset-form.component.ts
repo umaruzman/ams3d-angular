@@ -13,6 +13,8 @@ export class NewAssetFormComponent extends ModalFormTemplate implements OnInit {
 
   @Input() editData;
 
+  formTitle = "Add Asset";
+
   constructor(
     fb: FormBuilder,
     cd: ChangeDetectorRef,
@@ -25,21 +27,24 @@ export class NewAssetFormComponent extends ModalFormTemplate implements OnInit {
 
     this.initForm();
 
-    this.addProp();
+    if(!this.editData) {
+      this.addProp();
+    }
   }
 
   initForm() {
     this.form = this.fb.group({
-      id: [0, Validators.required],
-      name: ['', Validators.required],
-      assetTypeId: ['', Validators.required],
-      modelId: ['',Validators.required],
+      id: [this.editData?.id || 0, Validators.required],
+      name: [this.editData?.name || '', Validators.required],
+      assetTypeId: [this.editData?.assetType?.id || '', Validators.required],
+      modelId: [this.editData?.model?.id || 1,Validators.required],
       properties: this.fb.array([])
     });
 
     this.cd.detectChanges();
 
     if(this.editData) {
+      this.formTitle = "Edit Asset - " + this.editData?.id;
       this.setValues(this.editData);
     }
   }
@@ -47,7 +52,7 @@ export class NewAssetFormComponent extends ModalFormTemplate implements OnInit {
   setValues(data) {
     this.form.get('id').patchValue(data?.id);
     this.form.get('name').patchValue(data?.name);
-    this.form.get('assetTypeId').setValue(data?.assetType?.id);
+    this.form.get('assetTypeId').patchValue(data?.assetType?.id);
     this.form.get('modelId').patchValue(data?.model?.id);
     if(data.properties?.length > 0){
       data.properties.forEach(prop => {
