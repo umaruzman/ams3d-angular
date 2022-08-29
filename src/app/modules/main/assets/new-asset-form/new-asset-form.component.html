@@ -5,14 +5,14 @@
     (ngSubmit)="submitFormData()"
 >
     <nz-form-item>
-        <nz-form-label [nzSpan]="4">Asset Name</nz-form-label>
-        <nz-form-control [nzSpan]="14" nzErrorTip="Please input Asset Name">
+        <nz-form-label [nzSpan]="5">Asset Name</nz-form-label>
+        <nz-form-control [nzSpan]="19" nzErrorTip="Please input Asset Name">
             <input nz-input formControlName="name" placeholder="Asset Name" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSpan]="4">Asset Type</nz-form-label>
-        <nz-form-control [nzSpan]="14">
+        <nz-form-label [nzSpan]="5">Asset Type</nz-form-label>
+        <nz-form-control [nzSpan]="19">
             <nz-select
                 id="assetTypeId"
                 formControlName="assetTypeId"
@@ -22,14 +22,11 @@
             </nz-select>
         </nz-form-control>
     </nz-form-item>
-    <nz-form-item>
-        <nz-form-control [nzSpan]="14" [nzOffset]="4">
-            <button nz-button nzType="primary">Submit</button>
-        </nz-form-control>
-    </nz-form-item>
-    <!-- <table>
-        <ng-container *ngIf="assetProps" formArrayName="properties">
-            <tr *ngFor="let propForm of assetProps.controls; let i = index">
+    
+    <label for="">Asset Properties: </label>
+    <table class="w-100">
+        <ng-container *ngIf="properties" formArrayName="properties">
+            <tr *ngFor="let propForm of properties.controls; let i = index">
                 <ng-container [formGroup]="propForm">
                     <td>
                         <input nz-input formControlName="key" placeholder="Property" />
@@ -37,9 +34,25 @@
                     <td>
                         <input nz-input formControlName="value" placeholder="Value" />
                     </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" (click)="deleteProp(i)">Remove</a>
+                    </td>
                 </ng-container>
             </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="d-flex w-100 justify-content-center">
+                        <button nz-button nzType="primary" type="button" (click)="addProp()">Add</button>
+                    </div>
+                </td>
+            </tr>
         </ng-container>
-    </table> -->
+    </table>
+
+    
+    <div class="d-flex justify-content-end">
+        <button nz-button nzType="primary">Submit</button>
+    </div>
+    
     
 </form>

@@ -22,29 +22,59 @@ export class NewAssetFormComponent extends ModalFormTemplate implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initForm({
-      name: [Validators.required],
-      assetTypeId: [Validators.required],
-      modelId: [Validators.required]
-    });
 
-    this.form.addControl('properties', this.fb.array([]));
+    this.initForm();
+
     this.addProp();
   }
 
-  get assetProps() {
-    return this.form.controls['properties'] as FormArray;
+  initForm() {
+    this.form = this.fb.group({
+      id: [0, Validators.required],
+      name: ['', Validators.required],
+      assetTypeId: ['', Validators.required],
+      modelId: ['',Validators.required],
+      properties: this.fb.array([])
+    });
+
+    this.cd.detectChanges();
+
+    if(this.editData) {
+      this.setValues(this.editData);
+    }
   }
 
-  newProp() {
+  setValues(data) {
+    this.form.get('id').patchValue(data?.id);
+    this.form.get('name').patchValue(data?.name);
+    this.form.get('assetTypeId').setValue(data?.assetType?.id);
+    this.form.get('modelId').patchValue(data?.model?.id);
+    if(data.properties?.length > 0){
+      data.properties.forEach(prop => {
+        this.properties.push(this.newProp(prop?.key, prop?.value));
+      });
+    }
+
+    this.cd.detectChanges();
+  }
+
+  get properties() {
+    return this.form.get('properties') as FormArray;
+  }
+
+  newProp(key = '', value = '') {
     return this.fb.group({
-      key: [Validators.required],
-      value: [Validators.required]
+      key: [key,Validators.required],
+      value: [value,Validators.required]
     })
   }
 
   addProp(){
-    this.assetProps.push(this.newProp());
+    this.properties.push(this.newProp());
+  }
+
+  deleteProp(lessonIndex: number) {
+    this.properties.removeAt(lessonIndex);
   }
 
   castToObject(values: any) {

@@ -18,5 +18,13 @@ export class AssetsService {
     return this.http.get(`${BASE_URL}/Assets`)
   }
 
+  add(data): Observable<any> {
+    return this.http.post(`${BASE_URL}/Assets`, data);
+  }
+
+
+  delete(id): Observable<any> {
+    return this.http.delete(`${BASE_URL}/Assets/${id}`,);
+  }
 
 }

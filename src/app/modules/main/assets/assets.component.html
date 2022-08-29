@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between">
     <h3>Assets</h3>
-    <button nz-button nzType="primary" (click)="newAsset()">Add Asset</button>
+    <button nz-button nzType="primary" (click)="newAssetForm()">Add Asset</button>
 </div>
 
 <nz-table #basicTable [nzData]="data">
@@ -18,11 +18,11 @@
       <td>{{data?.assetType?.type}}</td>
       <td>{{data?.model?.modelName}}</td>
       <td>
-        <a (click)="viewProperties(data?.properties)">View Properties</a>
+        <a class="btn btn-primary" (click)="viewProperties(data?.properties)">View Properties</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a>Edit</a>
+        <a class="btn btn-primary" (click)="editAssetForm(data)">Edit</a>
         <nz-divider nzType="vertical"></nz-divider>
-        <a>Delete</a>
+        <a class="btn btn-primary" (click)="deleteAsset(data?.id)">Delete</a>
       </td>
     </tr>
   </tbody>

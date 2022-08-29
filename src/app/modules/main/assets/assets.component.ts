@@ -42,10 +42,41 @@ export class AssetsComponent extends BasicComponent implements OnInit {
     this.showDialog(AssetPropertiesComponent, {data: props});
   }
 
-  newAsset(){
+  newAssetForm(){
     const ref = this.showDialog(NewAssetFormComponent);
     ref.afterClose.subscribe(data=>{
       console.log('Form Data', data);
+      this.saveAsset(data.data);
+    });
+  }
+
+  editAssetForm(asset){
+    const ref = this.showDialog(NewAssetFormComponent, {editData: asset});
+    ref.afterClose.subscribe(data=>{
+      console.log('Form Data', data);
+      // this.saveAsset(data.data);
+    });
+  }
+
+  saveAsset(data){
+    this.service.add(data).subscribe((res)=>{
+      this.showSuccess('Asset Added Successfully!');
+      this.getAllAssets();
+    },
+    () => {
+      this.showError('Failed to add Asset, please check and try again!');
+    });
+  }
+
+
+
+  deleteAsset(id){
+    this.service.delete(id).subscribe((res)=>{
+      this.showSuccess('Successfully Deleted Asset!');
+      this.getAllAssets();
+    },
+    () => {
+      this.showError('Failed to delete Asset, please check and try again!');
     });
   }
 
