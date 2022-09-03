@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { FormTemplate } from 'src/app/templates/form.template';
 import { ModalFormTemplate } from 'src/app/templates/modal-form.template';
-import { AssetTypesService } from '../../assets-types/asset-types.service';
+import { AssetTypesService } from '../../services/asset-types.service';
 
 @Component({
   selector: 'app-new-asset-form',

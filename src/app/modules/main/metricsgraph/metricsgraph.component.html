@@ -1,0 +1,65 @@
+<form
+    *ngIf="form"
+      nz-form
+      nzLayout="inline"
+      [formGroup]="form"
+      (ngSubmit)="generateReport()"
+>
+      <nz-form-item>
+        <nz-form-label>Asset</nz-form-label>
+        <nz-form-control nzErrorTip="Please select Asset!">
+            <nz-select formControlName="assetId" nzShowSearch nzAllowClear>
+                <nz-option *ngFor="let asset of assets" [nzValue]="asset.id" [nzLabel]="asset.name"></nz-option>
+            </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Metric Type</nz-form-label>
+        <nz-form-control nzErrorTip="Please select Metric!">
+            <nz-select formControlName="metricTypeId" nzShowSearch nzAllowClear>
+                <nz-option *ngFor="let metricType of metricTypes" [nzValue]="metricType.id" [nzLabel]="metricType.name"></nz-option>
+            </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button [disabled]="!generateButtonEnabled" nz-button nzType="primary" type="submit">Generate</button>
+          <button [disabled]="graph.data.length == 0" nz-button nzType="primary" type="button" class="ml-2" (click)="getGraphForecast()">Forecast</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+
+
+<nz-tabset>
+    <nz-tab [nzTitle]="ReportTitleTemplate" (nzSelect)="tabSelected(1)">
+        <ng-template #ReportTitleTemplate>
+            <span nz-icon nzType="profile"></span>
+            Report
+        </ng-template>
+        <ng-container *ngIf="selectedTab == 1">
+            <nz-table #basicTable [nzData]="data">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Metrics</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tableData of basicTable.data">
+                    <td>{{tableData.date}}</td>
+                    <td>{{tableData.value}}</td>
+                  </tr>
+                </tbody>
+            </nz-table>
+        </ng-container>
+    </nz-tab>
+    <nz-tab [nzTitle]="ChartTitleTemplate" (nzSelect)="tabSelected(2)">
+        <ng-template #ChartTitleTemplate>
+            <span nz-icon nzType="line-chart"></span>
+            Chart
+        </ng-template>
+        <ng-container *ngIf="selectedTab == 2">
+            <plotly-plot *ngIf="graph.data.length > 0 && graph.layout" [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+        </ng-container>
+    </nz-tab>
+</nz-tabset>

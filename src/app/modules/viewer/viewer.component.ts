@@ -153,9 +153,9 @@ export class ViewerComponent extends BasicComponent implements OnInit {
   private init() {
     this.viewer.loadExtension('AssetLabelMarkerExtension',{
       assets: [
-        { dbId: 7094, label: '300&#176;C', css: 'fas fa-thermometer-full' },
-        { dbId: 4724, label: '356&#176;C', css: 'fas fa-thermometer-full' },
-        { dbId: 6553, label: '356&#176;C', css: 'fas fa-thermometer-full' },
+        // { dbId: 7094, label: '300&#176;C', css: 'fas fa-thermometer-full' },
+        // { dbId: 4724, label: '356&#176;C', css: 'fas fa-thermometer-full' },
+        // { dbId: 6553, label: '356&#176;C', css: 'fas fa-thermometer-full' },
       ],
       onClick: (id) => {
         this.viewer.select(id);

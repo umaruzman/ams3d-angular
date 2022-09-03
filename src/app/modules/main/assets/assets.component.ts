@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
+import { AssetsService } from '../services/assets.service';
 import { AssetPropertiesComponent } from './asset-properties/asset-properties.component';
-import { AssetsService } from './assets.service';
-import { map } from 'rxjs/operators';
 import { NewAssetFormComponent } from './new-asset-form/new-asset-form.component';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
-import { AssetTypesService } from './asset-types.service';
+import { AssetTypesService } from '../services/asset-types.service';
 import { NewAssetTypeFormComponent } from './new-asset-type-form/new-asset-type-form.component';
 
 @Component({

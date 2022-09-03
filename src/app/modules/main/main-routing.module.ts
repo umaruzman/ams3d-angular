@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: 'assets', loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule) },
       { path: 'asset-types', loadChildren: () => import('./assets-types/asset-types.module').then(m => m.AssetTypesModule) },
       { path: 'models', loadChildren: () => import('./models/models.module').then(m => m.ModelsModule) },
+      { path: 'metrics-graph', loadChildren: () => import('./metricsgraph/metricsgraph.module').then(m => m.MetricsgraphModule) },
     ]
   },
 ];

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
-import { ModelsService } from './models.service';
+import { ModelsService } from '../services/models.service';
 import { ModelsFormComponent } from './models-form/models-form.component';
 
 @Component({

@@ -18,7 +18,12 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ViewerModule } from 'ng2-adsk-forge-viewer';
 import { AppService } from './app.service';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 
 registerLocaleData(en);
 
@@ -39,7 +44,9 @@ registerLocaleData(en);
     NzMessageModule,
     NzModalModule,
     LayoutsModule,
-    ViewerModule
+    ViewerModule,
+    NzTabsModule,
+    PlotlyModule
   ],
   providers: [
     [{
