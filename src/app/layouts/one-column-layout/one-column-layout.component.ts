@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-one-column-layout',
@@ -9,9 +10,16 @@ export class OneColumnLayoutComponent implements OnInit {
 
   isCollapsed = false;
   
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
+
+  openModelViewer(){
+    this.router.navigate(['viewer'])
+  }
+
 
 }

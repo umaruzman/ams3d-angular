@@ -27,12 +27,12 @@
         </button>
     </div>
 
-    <div class="selected-toolbar" *ngIf="selectedDbId">
+    <div class="selected-toolbar" *ngIf="selectedDbId && selectedAsset">
         <div class="d-flex justify-content-center align-items-center">
-            <span>Asset Name</span>
+            <span>{{selectedAsset?.asset?.name}}</span>
         </div>
         <div  class="d-flex justify-content-center align-items-center">
-            <button nz-button nzType="primary" nzSize="small" (click)="openAssetDetailDrawer()">
+            <button nz-button nzType="primary" nzSize="small" (click)="openAssetDetailDrawer(selectedAsset)">
                 Details
             </button>
             <a class="btn text-white" (click)="clearSelection()"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -44,22 +44,32 @@
         </div>
         
         <div class="group">
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Orbit" class="toolbar-btn" #nav (click)="orbit()" tag="ORBIT" nbTooltip="Orbit" status="info">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Orbit" class="toolbar-btn" #nav (click)="orbit()" tag="ORBIT" status="info">
                 <!-- <nb-icon icon="compass" class="far" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-compass" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Pan" class="toolbar-btn" #nav (click)="pan()" tag="PAN" nbTooltip="Pan">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Pan" class="toolbar-btn" #nav (click)="pan()" tag="PAN">
                 <!-- <nb-icon icon="hand-paper" class="far" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-hand-paper" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Zoom" class="toolbar-btn" #nav (click)="zoom()" tag="ZOOM" nbTooltip="Zoom">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Zoom" class="toolbar-btn" #nav (click)="zoom()" tag="ZOOM">
                 <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-search-plus" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="First Person" class="toolbar-btn" #nav tag="FIRST_PERSON" 
-            (click)="toggleFirstPerson()" nbTooltip="First Person View">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="First Person View" class="toolbar-btn" #nav tag="FIRST_PERSON" 
+            (click)="toggleFirstPerson()">
                 <!-- <nb-icon icon="person-outline"></nb-icon> -->
                 <i class="fa fa-male" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="group" *ngIf="selectedDbId && !selectedAsset">
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Assign Asset to Selected" class="toolbar-btn" #nav>
+                <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+            </button>
+            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Clear Asset Selection" class="toolbar-btn" (click)="clearSelection()" #nav>
+                <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
+                <i class="fa fa-window-close" aria-hidden="true"></i>
             </button>
         </div>
     </div>
@@ -74,10 +84,29 @@
     >
       <ng-container *nzDrawerContent>
         <div class="asset-details-panel">
-            <h1>
-                Chiller 124
-            </h1>
+            <h2>
+                {{selectedAsset?.asset?.name}}
+            </h2>
+            <nz-divider></nz-divider>
+
+            <label>Asset Properties</label>
+
+            <table class="asset-props-table">
+                <tr *ngFor="let prop of selectedAsset?.asset?.properties">
+                    <th>{{prop?.key}}</th>
+                    <td>{{prop?.value}}</td>
+                </tr>
+            </table>
+
+            <label class="mt-3">Latest Metrics</label>
+
+            <table class="asset-props-table">
+                <tr *ngFor="let metric of selectedAssetMetrics">
+                    <th>{{metric?.metricType?.name}} ({{metric?.metricType?.unit}})</th>
+                    <td>{{metric?.value}} <small>(As of {{metric?.dateTime | date}})</small></td>
+                </tr>
+            </table>
+
         </div>
-        
       </ng-container>
 </nz-drawer>

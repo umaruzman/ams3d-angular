@@ -6,6 +6,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { AssetLabelMarkerExtension } from 'src/app/extensions/AssetLabelMarkerExtension';
 import { ViewerNavigationMode } from 'src/app/models/modes/ViewerNavigationMode';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
+import { AssetsService } from '../main/services/assets.service';
 import { ViewerService } from './viewer.service';
 
 declare const Autodesk: any;
@@ -33,6 +34,10 @@ export class ViewerComponent extends BasicComponent implements OnInit {
   selectedDbId = 0;
   viewAssetDetails = false;
 
+  assetsOnModel;
+  selectedAsset;
+  selectedAssetMetrics;
+
   progress:any = {
     state: 1,
     progress: 0
@@ -43,17 +48,43 @@ export class ViewerComponent extends BasicComponent implements OnInit {
     modal: NzModalService,
     private router: Router,
     private cd: ChangeDetectorRef,
-    private service: ViewerService
+    private service: ViewerService,
+    private assetService: AssetsService
   ) { 
     super(toast, modal)
   }
 
   ngOnInit(): void {
+    this.loadAssetOnModel();
   }
 
   ngAfterViewInit() {
     this.registerExtensions();
     this.launchViewer();
+  }
+
+  loadAssetOnModel(){
+    this.assetService.getAllAssetOnModel().subscribe(data=>{
+      data = data.map(a => {
+        return {
+          ...a,
+          asset: {
+            ...a.asset,
+            properties: JSON.parse(a.asset.properties)
+          }
+        }
+      });
+      this.assetsOnModel = data;
+    },
+    ()=>{
+      this.showError("Failed to load asset Data, please retry")
+    })
+  }
+
+  getLatesAssetMetrics() {
+    this.assetService.getAllAssetLatestMetrics(this.selectedAsset.asset.id).subscribe(data=>{
+      this.selectedAssetMetrics = data;
+    })
   }
 
   private launchViewer() {
@@ -126,9 +157,20 @@ export class ViewerComponent extends BasicComponent implements OnInit {
 
                 this.viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, ev =>{ 
                   let dbIds = ev.dbIdArray;
-                  this.selectedDbId = 0
+                  console.log(dbIds);
+
+                  this.selectedDbId = 0;
+                  this.selectedAsset = null;
+                  this.selectedAssetMetrics = null;
+                  console.log('Assets on the Model', this.assetsOnModel);
+                  
                   if(dbIds.length > 0) {
                     this.selectedDbId = dbIds[0];
+                    this.selectedAsset = this.assetsOnModel?.find(a=>a.dbid == this.selectedDbId);
+                    if(this.selectedAsset){
+                      this.getLatesAssetMetrics()
+                    }
+                    console.log('Selected Asset', this.selectedAsset)
                   }
                 });
 
@@ -145,6 +187,7 @@ export class ViewerComponent extends BasicComponent implements OnInit {
             console.log("Viewer failed to initialize", err)
           })
   }
+
    
   private registerExtensions():void {
     Autodesk.Viewing.theExtensionManager.registerExtension('AssetLabelMarkerExtension', AssetLabelMarkerExtension);
@@ -228,7 +271,7 @@ export class ViewerComponent extends BasicComponent implements OnInit {
     this.showInfo(`Viewer Changed to ${ViewerNavigationMode[this.navMode]} Mode`);
   }
 
-  openAssetDetailDrawer() {
+  openAssetDetailDrawer(selectedAsset) {
     this.viewAssetDetails = true;
   }
 

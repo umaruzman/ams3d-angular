@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzSpinModule,
     NzAvatarModule,
     NzDropDownModule,
-    NzCardModule
+    NzCardModule,
+    NzButtonModule
   ],
   exports: [
     OneColumnLayoutComponent

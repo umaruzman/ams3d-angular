@@ -89,6 +89,48 @@
         }
     }
 
+    ::ng-deep {
+        .asset-label {
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.468);
+            color: hwb(0 100% 0%);
+        }
+    }
+    
+    ::ng-deep {
+        .ant-btn {
+            color: #fff;
+            border: none;
+            opacity: 0.8;
+            
+            &.toolbar-btn {
+                background: rgb(20, 20, 33);
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 1rem;
+    
+                &:hover {
+                    transform: translateY(-0.2rem);
+                }
+            }
+    
+            &.exit-btn{
+                background: rgb(20, 20, 33);
+                width: 3rem;
+                height: 3rem;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    
+        .ant-message-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
 }
 
 .modal-container {
@@ -168,44 +210,33 @@
     transform: translate(0, 0);
 }
 
-::ng-deep {
-    .asset-label {
-        padding: 5px;
-        background: rgba(0, 0, 0, 0.468);
-        color: hwb(0 100% 0%);
-    }
-}
+.asset-details-panel {
+    color: #fff;
 
-::ng-deep {
-    .ant-btn {
+    h2 {
         color: #fff;
-        border: none;
-        opacity: 0.8;
-        
-        &.toolbar-btn {
-            background: rgb(20, 20, 33);
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 1rem;
-
-            &:hover {
-                transform: translateY(-0.2rem);
-            }
-        }
-
-        &.exit-btn{
-            background: rgb(20, 20, 33);
-            width: 3rem;
-            height: 3rem;
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
     }
 
-    .ant-message-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    nz-divider {
+        border-color: #fff;
+    }
+
+    .asset-props-table{
+        width: 100%;
+        // border: 1px solid rgb(38, 38, 38);
+        
+        th, td {
+            padding: 1rem;
+        }
+
+        th {
+            background: rgb(17, 17, 17);
+            width: 35%;
+        }
+
+        td {
+            background: rgb(38, 38, 38);
+        }
+        
     }
 }

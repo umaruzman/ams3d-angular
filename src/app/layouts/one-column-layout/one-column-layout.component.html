@@ -12,14 +12,13 @@
         </a>
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <li nz-submenu nzOpen nzTitle="Main" nzIcon="dashboard">
           <ul>
             <li nz-menu-item nzMatchRouter>
               <a routerLink="/assets">Assets</a>
             </li>
-            
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/viewer">Viewer</a>
+              <a routerLink="/users">Users</a>
             </li>
           </ul>
         </li>
@@ -27,6 +26,9 @@
           <ul>
             <li nz-menu-item nzMatchRouter>
               <a routerLink="/asset-types">Asset Types</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="/metric-types">Metric Types</a>
             </li>
           </ul>
           <ul>
@@ -54,6 +56,8 @@
                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></i>
             </span>
+
+            <button nz-button nzType="default" (click)="openModelViewer()">3D Model Viewer</button>
           </div>
 
           <div class="header-right">

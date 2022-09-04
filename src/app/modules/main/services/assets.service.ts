@@ -18,6 +18,14 @@ export class AssetsService {
     return this.http.get(`${BASE_URL}/Assets`)
   }
 
+  getAllAssetOnModel(): Observable<any> {
+    return this.http.get(`${BASE_URL}/Assets/onmodel`)
+  }
+
+  getAllAssetLatestMetrics(asset): Observable<any> {
+    return this.http.get(`${BASE_URL}/Assets/latestmetrics/${asset}`)
+  }
+
   add(data): Observable<any> {
     return this.http.post(`${BASE_URL}/Assets`, data);
   }
