@@ -103,7 +103,7 @@
             <table class="asset-props-table">
                 <tr *ngFor="let metric of selectedAssetMetrics">
                     <th>{{metric?.metricType?.name}} ({{metric?.metricType?.unit}})</th>
-                    <td>{{metric?.value}} <small>(As of {{metric?.dateTime | date}})</small></td>
+                    <td>{{metric?.value}} <small>(As of {{metric?.dateTime | date:'dd-MM-yyyy'}})</small></td>
                 </tr>
             </table>
 

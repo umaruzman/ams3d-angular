@@ -46,7 +46,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let tableData of basicTable.data">
-                    <td>{{tableData.date}}</td>
+                    <td>{{tableData.date | date:'dd-MM-yyyy'}}</td>
                     <td>{{tableData.value}}</td>
                   </tr>
                 </tbody>

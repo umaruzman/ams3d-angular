@@ -1,0 +1,18 @@
+.asset-props-table{
+    width: 100%;
+    // border: 1px solid rgb(38, 38, 38);
+    
+    th, td {
+        padding: 1rem;
+    }
+
+    th {
+        background: rgb(210, 210, 210);
+        width: 35%;
+    }
+
+    td {
+        background: rgb(241, 241, 241);
+    }
+    
+}

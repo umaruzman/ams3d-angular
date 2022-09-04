@@ -1,14 +1,6 @@
-<table *ngIf="data">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of data">
-        <td>{{item?.key}}</td>
-        <td>{{item?.value}}</td>
-      </tr>
-    </tbody>
+<table *ngIf="data" class="asset-props-table">
+  <tr *ngFor="let item of data">
+    <th>{{item?.key}}</th>
+    <td>{{item?.value}}</td>
+  </tr>
 </table>
