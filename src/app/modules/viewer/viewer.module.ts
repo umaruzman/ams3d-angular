@@ -7,10 +7,13 @@ import { ViewerModule as VM } from 'ng2-adsk-forge-viewer';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { AssignAssetForm } from './assign-asset-form/assign-asset-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    ViewerComponent
+    ViewerComponent,
+    AssignAssetForm,
   ],
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
     VM,
     SharedModule,
     NzProgressModule,
-    NzDrawerModule
+    NzDrawerModule,
+    ReactiveFormsModule
   ]
 })
 export class ViewerModule { }

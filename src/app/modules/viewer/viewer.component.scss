@@ -208,6 +208,13 @@
     right: .5rem;
     bottom: .5rem;
     transform: translate(0, 0);
+
+    text-align: right;
+
+    .small-logo {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .asset-details-panel {

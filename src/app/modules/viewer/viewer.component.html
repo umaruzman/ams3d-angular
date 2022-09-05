@@ -7,15 +7,16 @@
         </h3>
 
         <span *ngIf="progress?.state == 1" [@fadeOutOnLeave]>
-            <!-- <img class="#logo" src="../../../assets/icons/icon-512x512.png"> -->
+            <img class="#logo" src="assets/images/logo.svg" alt="logo">
             <ng-container>
-                <nz-progress *ngIf="progress?.progress < 100" [nzPercent]="progress?.progress" nzType="circle"></nz-progress>
-                <label class="label">Loading model - Demo...</label>
+                <nz-progress class="w-100" *ngIf="progress?.progress < 100" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" [nzPercent]="progress?.progress"></nz-progress>
+                <label class="label">Loading model</label>
             </ng-container>
         </span>
     </div>
 
     <div class="logo-overlay">
+        <img class="small-logo" src="assets/images/logo.svg" alt="logo">
         <span>
             <nz-progress *ngIf="progress?.progress < 100" [nzPercent]="progress?.progress" [nzShowInfo]="false"></nz-progress>
         </span>
@@ -62,12 +63,12 @@
                 <i class="fa fa-male" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="group" *ngIf="selectedDbId && !selectedAsset">
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Assign Asset to Selected" class="toolbar-btn" #nav>
+        <div class="group">
+            <button *ngIf="selectedDbId && !selectedAsset" nz-button nzType="default" nz-tooltip nzTooltipTitle="Assign Asset to Selected" class="toolbar-btn" (click)="assignAssetForm()" #nav>
                 <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-plus-square" aria-hidden="true"></i>
             </button>
-            <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Clear Asset Selection" class="toolbar-btn" (click)="clearSelection()" #nav>
+            <button *ngIf="selectedDbId" nz-button nzType="default" nz-tooltip nzTooltipTitle="Clear Asset Selection" class="toolbar-btn" (click)="clearSelection()" #nav>
                 <!-- <nb-icon icon="search-plus" class="fas" pack="font-awesome"></nb-icon> -->
                 <i class="fa fa-window-close" aria-hidden="true"></i>
             </button>

@@ -7,6 +7,7 @@ import { AssetLabelMarkerExtension } from 'src/app/extensions/AssetLabelMarkerEx
 import { ViewerNavigationMode } from 'src/app/models/modes/ViewerNavigationMode';
 import { BasicComponent } from 'src/app/templates/basic-component.template';
 import { AssetsService } from '../main/services/assets.service';
+import { AssignAssetForm } from './assign-asset-form/assign-asset-form.component';
 import { ViewerService } from './viewer.service';
 
 declare const Autodesk: any;
@@ -223,7 +224,7 @@ export class ViewerComponent extends BasicComponent implements OnInit {
   }
   
   exitViewer() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/assets']);
   }
 
   pan() {
@@ -291,6 +292,15 @@ export class ViewerComponent extends BasicComponent implements OnInit {
       } else if (!enabled && bimWalk['isActive']('')) {
         bimWalk['deactivate']();
         this.setNavButtons(ViewerNavigationMode.ORBIT);
+      }
+    });
+  }
+
+  assignAssetForm(){
+    const ref = this.showDialog(AssignAssetForm, {dbid: this.selectedDbId});
+    ref.afterClose.subscribe(data=>{
+      if(data?.data){
+        
       }
     });
   }
