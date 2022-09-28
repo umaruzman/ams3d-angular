@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between">
+    <h3>Assets Types</h3>
+    <button nz-button nzType="primary" (click)="newMetricForm()">Add Asset Type</button>
+</div>
+
+<nz-table #basicTable [nzData]="data">
+  <thead>
+    <tr>
+      <th>Metric Type Id</th>
+      <th>Metric Type</th>
+      <th>Unit</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data?.id}}</td>
+      <td>{{data?.name}}</td>
+      <td>{{data?.unit}}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" (click)="editMetricForm(data)">Edit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a class="btn btn-primary btn-sm" (click)="deleteMetric(data?.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
