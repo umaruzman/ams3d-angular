@@ -26,6 +26,7 @@
     "angular-plotly.js": "^4.0.4",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "jspdf": "^2.5.1",
     "ng-zorro-antd": "^11.4.2",
     "ng2-adsk-forge-viewer": "1.4",
     "plotly.js-dist-min": "^2.14.0",

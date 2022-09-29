@@ -24,7 +24,8 @@
       <nz-form-item>
         <nz-form-control>
           <button [disabled]="!generateButtonEnabled" nz-button nzType="primary" type="submit">Generate</button>
-          <button [disabled]="graph.data.length == 0" nz-button nzType="primary" type="button" class="ml-2" (click)="getGraphForecast()">Forecast</button>
+          <button [disabled]="graph.data.length == 0 || data?.length<=0" nz-button nzType="primary" type="button" class="ml-2" (click)="getGraphForecast()">Forecast</button>
+          <button [disabled]="data?.length<=0" nz-button nzType="primary" type="button" class="ml-2" (click)="openPDF()">Download</button>
         </nz-form-control>
       </nz-form-item>
     </form>

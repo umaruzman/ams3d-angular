@@ -39,4 +39,8 @@ export class AssetsService {
     return this.http.put(`${BASE_URL}/Assets/${id}`, data);
   }
 
+  assignAsset(data): Observable<any> {
+    return this.http.post(`${BASE_URL}/Assets/assign`, data)
+  }
+
 }

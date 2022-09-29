@@ -300,7 +300,22 @@ export class ViewerComponent extends BasicComponent implements OnInit {
     const ref = this.showDialog(AssignAssetForm, {dbid: this.selectedDbId});
     ref.afterClose.subscribe(data=>{
       if(data?.data){
-        console.log(data); 
+        this.assetService.assignAsset(data.data).subscribe(res=>{
+          res = res.map(a => {
+            return {
+              ...a,
+              asset: {
+                ...a.asset,
+                properties: JSON.parse(a.asset.properties)
+              }
+            }
+          });
+          this.assetsOnModel = res;
+          this.showSuccess("Asset Asssigned Succesfully")
+        },
+        ()=>{
+          this.showError("Failed to Assign Assets")
+        })
       }
     });
   }
