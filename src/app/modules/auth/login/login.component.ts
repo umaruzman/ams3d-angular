@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FormTemplate } from 'src/app/templates/form.template';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,10 @@ import { FormTemplate } from 'src/app/templates/form.template';
 })
 export class LoginComponent extends FormTemplate implements OnInit {
 
-  constructor(fb: FormBuilder, cd: ChangeDetectorRef) { 
+  error: string;
+  submitted: boolean;
+
+  constructor(fb: FormBuilder, cd: ChangeDetectorRef, private auth: AuthService, private router: Router) { 
     super(fb,cd);
   }
 
@@ -26,8 +31,23 @@ export class LoginComponent extends FormTemplate implements OnInit {
     )
   }
 
+  login() {
+    const data = this.form.value;
+    this.submitted = true;
+    this.error = null;
+    
+    this.auth.login(data['username'], data['password']).subscribe(
+      res => this.router.navigate(['/assets']),
+      err => {
+        this.submitted = false;
+        this.error = err?.message || 'Invalid username or password';
+        this.form.get('password').setValue('');
+      }
+    );
+  }
+
   submitForm() {
-    console.log(this.form.value);
+    this.login();
   }
 
   castToObject(values: any) {

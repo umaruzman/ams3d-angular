@@ -11,6 +11,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 const nzModules = [
   NzButtonModule,
@@ -23,7 +24,8 @@ const nzModules = [
   NzToolTipModule,
   NzTableModule,
   NzDividerModule,
-  NzTabsModule
+  NzTabsModule,
+  NzSwitchModule
 ]
 
 @NgModule({

@@ -300,7 +300,7 @@ export class ViewerComponent extends BasicComponent implements OnInit {
     const ref = this.showDialog(AssignAssetForm, {dbid: this.selectedDbId});
     ref.afterClose.subscribe(data=>{
       if(data?.data){
-        
+        console.log(data); 
       }
     });
   }

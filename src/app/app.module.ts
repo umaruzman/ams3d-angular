@@ -8,7 +8,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -22,6 +22,8 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
+import { AuthGuard } from './modules/auth/auth.guard';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -59,7 +61,9 @@ registerLocaleData(en);
         }
       }
     }],
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

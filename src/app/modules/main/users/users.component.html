@@ -1,22 +1,28 @@
 <div class="d-flex justify-content-between">
-    <h3>Metrics Types</h3>
-    <button nz-button nzType="primary" (click)="newMetricForm()">Add Asset Type</button>
+    <h3>Users</h3>
+    <button nz-button nzType="primary" (click)="newMetricForm()">Add User</button>
 </div>
 
 <nz-table #basicTable [nzData]="data">
   <thead>
     <tr>
-      <th>Metric Type Id</th>
-      <th>Metric Type</th>
-      <th>Unit</th>
+      <th>User Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>User Type</th>
+      <th>Status</th>
+      <th>Role</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let data of basicTable.data">
       <td>{{data?.id}}</td>
-      <td>{{data?.name}}</td>
-      <td>{{data?.unit}}</td>
+      <td>{{data?.username}}</td>
+      <td>{{data?.email}}</td>
+      <td>{{data?.userType}}</td>
+      <td>{{data?.userStatus ? "Active": "Inactive"}}</td>
+      <td>{{data?.userRole.role}}</td>
       <td>
         <a class="btn btn-primary btn-sm" (click)="editMetricForm(data)">Edit</a>
         <nz-divider nzType="vertical"></nz-divider>
