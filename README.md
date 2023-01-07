@@ -12,7 +12,8 @@
 ![](readme_images/Picture8.png)
 
 
-## **Angular Skeleton** by UMAR UZMAN
+## **[Angular Skeleten](https://github.com/umaruzman/angular-skeleton-ngantd)** by UMAR UZMAN
+
 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.14.
 - This project uses NG-ZORRO!
