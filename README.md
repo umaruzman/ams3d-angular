@@ -1,21 +1,35 @@
-# **Angular Skeleton** by UMAR UZMAN
+# **3D Asset Management System** by UMAR UZMAN
+
+## Screenshots
+
+![](readme_images/Picture1.png)
+![](readme_images/Picture2.png)
+![](readme_images/Picture3.png)
+![](readme_images/Picture4.png)
+![](readme_images/Picture5.png)
+![](readme_images/Picture6.png)
+![](readme_images/Picture7.png)
+![](readme_images/Picture8.png)
+
+
+## **Angular Skeleton** by UMAR UZMAN
 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.14.
 - This project uses NG-ZORRO!
 - This Skeleten was created by Umar Uzman
 
-## Templates
+### Templates
 
 - Extend Normal components to BasicComponentTemplate
 - Extend Form Components to FormTemplate
 - Extend Forms in Modal to ModalFormTemplate
 
-## Layout
+### Layout
 
 Use one-column-layout for main module
 
 
-## Modules
+### Modules
 
 Modules Folder has 2 Primary Modules
 
